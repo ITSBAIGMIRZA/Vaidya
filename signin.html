@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaidya</title>
+  <style>
+    body {
+      background-color: #fff9e6; /* Pale yellow background */
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #F6C102; /* Yellow background */
+      overflow: hidden;
+      text-align: right; /* Align text to the right */
+      padding: 6px; /* Adjusted padding for the navbar */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      height: 40px; /* Reduced navbar height */
+      transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out; /* Add smooth transitions */
+    }
+
+    nav a {
+      display: inline-block;
+      color: #fff; /* White text color */
+      text-align: center;
+      padding: 4px 8px; /* Adjusted padding for the navbar links */
+      text-decoration: none;
+      margin-right: 4px; /* Adjusted margin for the navbar links */
+      transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, border-radius 0.2s ease-in-out; /* Add smooth transitions */
+      border: 2px solid transparent; /* Transparent border by default */
+      border-radius: 8px; /* Rounded corners */
+    }
+
+    nav a.logo {
+      float: left; /* Float the logo to the left */
+      margin-right: auto; /* Move logo to the left */
+    }
+
+    nav a.signin,
+    nav a.about,
+    nav a.contact,
+    nav a.signup,
+    nav a.forgot {
+      margin-left: auto; /* Move Sign In, About, and Contact to the right */
+    }
+
+    nav a:hover {
+      background-color:;
+      transform: scale(1.1); /* Increase size on hover */
+      border: 2px solid #000; /* Black border on hover */
+      border-radius: 8px; /* Rounded corners on hover */
+    }
+
+    .logo img {
+      height: 35px; /* Reduced logo height */
+      border-radius: 8px; /* Make the logo have rounded corners */
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+      margin: 0; /* Remove margin in the content box */
+      margin-top: 50px; /* Adjusted top margin for content to account for fixed navbar */
+    }
+
+    .signin-form {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signin-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .signin-form input {
+      width: calc(100% - 22px);
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 14px;
+      top: 30%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .signin-form button {
+      background-color: #F6C102;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .signin-form button:hover {
+      background-color: #d35400; /* Darker yellow background on hover */
+    }
+
+    .signin-form a {
+      display: block;
+      margin-top: 10px;
+      color: #3498db;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="i1.png" alt="Logo">
+    </a>
+    
+    <a href="about.html" class="about">About</a>
+  </nav>
+
+  <div class="content">
+    <div class="signin-form">
+      <h2>Sign In</h2>
+      <form action="your_server_endpoint" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" required>
+          <span class="password-toggle" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <button type="submit">Sign In</button>
+
+        <a href="#" class="forgot">Forgot Password?</a>
+        <a href="signup.html" class="signup">New to Vaidya? Sign Up</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById('password');
+      const passwordToggle = document.querySelector('.password-toggle');
+
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        passwordToggle.textContent = '👁️';
+      } else {
+        passwordField.type = 'password';
+        passwordToggle.textContent = '👁️';
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidya</title>
+    <style>
+        body {
+            background-color: #fff9e6;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #F6C102;
+            overflow: hidden;
+            text-align: right;
+            padding: 6px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 40px;
+            transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 4px 8px;
+            text-decoration: none;
+            margin-right: 4px;
+            transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+            border: 2px solid transparent;
+            border-radius: 8px;
+        }
+
+        nav a.logo {
+            float: left;
+            margin-right: auto;
+        }
+
+        nav a.about,
+        nav a.contact {
+            margin-left: auto;
+        }
+
+        nav a:hover {
+            background-color:;
+            transform: scale(1.1);
+            border: 2px solid #000;
+            border-radius: 8px;
+        }
+
+        .logo img {
+            height: 35px;
+            border-radius: 8px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: left;
+            margin: 0;
+            margin-top: 50px;
+        }
+
+        .content h1 {
+            font-size: 54px;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif; /* Change this line to use Georgia font */
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .content img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 8px;
+            float: right;
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            width: 50%; /* Set the width to 50% of the parent container */
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 15px 0 0 15px;
+            outline: none;
+        }
+
+        .search-button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 0 15px 15px 0;
+            background-color: #F6C102;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .search-button:hover {
+            background-color: #d35400;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .square-image {
+            flex: 0 0 calc(24% - 10px);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .square-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .square-image:hover {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .square-image:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* Chatbot Style */
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .chatbot img {
+            width: 60px;
+            height: auto;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .chatbot img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <img src="i1.png" alt="Logo">
+        </a>
+
+        <a href="about.html" class="about">About</a>
+        <a href="signin.html" class="signin">Sign In</a>
+    </nav>
+
+    <div class="content">
+        <h1 style="font-family: 'Georgia', serif;">Welcome to Vaidya</h1>
+        <p class="tagline">Transforming healthcare....Changing Lives</p>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Explore top-tier healthcare services">
+            <button class="search-button">Search</button>
+        </div>
+        <img src="i2.png" alt="Your Image">
+        <p></p>
+    </div>
+
+    <div class="image-container">
+        <a href="continue.html" class="square-image">
+            <img src="i3.png" alt="Image 1">
+            <div class="image-overlay">
+                <div class="overlay-text">Book Your Appointment</div>
+            </div>
+        </a>
+        <a href="continue.html" class="square-image">
+            <img src="i4.png" alt="Image 2">
+            <div class="image-overlay">
+                <div class="overlay-text">Find your Doctor</div>
+            </div>
+        </a>
+        <a href="continue.html" class="square-image">
+            <img src="i5.png" alt="Image 3">
+            <div class="image-overlay">
+                <div class="overlay-text">View Medical Reports</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Chatbot Image -->
+    <a href="https://mediafiles.botpress.cloud/fb8df201-12d2-4fe3-b5c5-5db190b86269/webchat/bot.html" class="chatbot">
+        <img src="i7.png" alt="Dr.Bot">
+    </a>
+
+</body>
+
+</html>
